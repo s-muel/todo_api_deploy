@@ -10,7 +10,7 @@ const todoController = require('./controllers/todoController');
 
 app.use(express.json());
 
-const PORT = process.env. PORT || 5010
+const PORT = process.env. PORT || 5011
 
 app.post('/todo',todoController.addTodo);
 
