@@ -10,6 +10,8 @@ const todoController = require('./controllers/todoController');
 
 app.use(express.json());
 
+const PORT = process.env. PORT || 5010
+
 app.post('/todo',todoController.addTodo);
 
 app.get ('/todo',todoController.getAllTodo);
@@ -19,8 +21,8 @@ app.get('/todo/:todoId',todoController.getAllTodoId);
 
 
 // listening to request on localhost port 5010
-app.listen(5010,() => {
-    console.log("My server is Up and running ");
+app.listen(PORT,() => {
+    console.log("My server is Up and running on Port:",PORT);
     // connecting to the database
     mongoose.connect(process.env.DB_URL)
     .then(function(){
