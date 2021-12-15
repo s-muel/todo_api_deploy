@@ -15,6 +15,7 @@ app.post('/todo',todoController.addTodo);
 app.get ('/todo',todoController.getAllTodo);
 app.patch('/todo/:todoId',todoController.updateById);
 app.delete('/todo/:todoId',todoController.deleteById);
+app.get('/todo/:todoId',todoController.getAllTodoId);
 
 
 // listening to request on localhost port 5010

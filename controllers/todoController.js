@@ -21,7 +21,7 @@ async function getAllTodo(request,response){
 async function updateById (request,response){
     try {
        const update= await todoModel.findByIdAndUpdate(request.params.todoId,request.body);
-       response.status(200).json({message:"i love you"});
+       response.status(200).json({message:"Updated"});
 
     } catch (error) {
         
@@ -36,10 +36,19 @@ try {
     
 }
 }
+async function getAllTodoId(request,response){
+    try {
+        const gettodobyId = await todoModel.findById(request.params.todoId);
+        response .status(200).json(gettodobyId );
+    } catch (error) {
+        console.log("something went wrong",error.message);
+    }
+}
 
-module.exports ={
+module.exports = {
     addTodo,
     getAllTodo,
     updateById,
-    deleteById
+    deleteById,
+    getAllTodoId
 }
