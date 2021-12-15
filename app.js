@@ -12,6 +12,10 @@ app.use(express.json());
 
 const PORT = process.env. PORT || 5011
 
+app.get('/',(req,res)=>{
+res.status(200).json({message:"hello first API"})
+});
+
 app.post('/todo',todoController.addTodo);
 
 app.get ('/todo',todoController.getAllTodo);
